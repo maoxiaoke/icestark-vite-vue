@@ -4,7 +4,6 @@ import List from './components/List.vue'
 import isInIcestark from '@ice/stark-app/lib/isInIcestark';
 import getBasename from '@ice/stark-app/lib/getBasename';
 
-
 // https://zhuanlan.zhihu.com/p/138444490
 
 const routerHistory = createWebHistory( isInIcestark() ? getBasename() : '/' )

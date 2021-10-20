@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import htmlPlugin from 'vite-plugin-htmls'
+import htmlPlugin from 'vite-plugin-index-html'
 
 console.log('fsdfsf', htmlPlugin)
 
