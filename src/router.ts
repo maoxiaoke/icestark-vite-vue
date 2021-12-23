@@ -6,20 +6,23 @@ import getBasename from '@ice/stark-app/lib/getBasename';
 
 // https://zhuanlan.zhihu.com/p/138444490
 
-const routerHistory = createWebHistory( isInIcestark() ? getBasename() : '/' )
+// 返回一个函数，重复进入 vue 应用的时候，重置 routes 实例（非常重要）
+const genRoute = () => {
+  const routerHistory = createWebHistory( isInIcestark() ? getBasename() : '/' )
 
-const router = createRouter({
-  history: routerHistory,
-  routes: [
-    {
-      path: '/',
-      component: HelloWorld
-    },
-    {
-      path: '/list',
-      component: List
-    }
-  ]
-})
+  return createRouter({
+    history: routerHistory,
+    routes: [
+      {
+        path: '/',
+        component: HelloWorld
+      },
+      {
+        path: '/list',
+        component: List
+      }
+    ]
+  })
+};
 
-export default router;
+export default genRoute;
